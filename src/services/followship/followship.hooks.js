@@ -9,10 +9,10 @@ export default function (options = {}) {
         cache(options.cache)
       ],
       update: [
-        hooks.discardFields('id', 'createdAt', 'updatedAt')
+        hooks.discardFields('createdAt', 'updatedAt')
       ],
       patch: [
-        hooks.discardFields('id', 'createdAt', 'updatedAt')
+        hooks.discardFields('createdAt', 'updatedAt')
       ]
     },
     after: {
