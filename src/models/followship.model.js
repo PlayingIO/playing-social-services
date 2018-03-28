@@ -1,15 +1,13 @@
-import { plugins } from 'mostly-feathers-mongoose';
-
 const options = {
   timestamps: true
 };
 
 /**
- * Following relationship between feed groups
+ * Following relationships
  */
 const fields = {
-  follower: { type: String, required: true },  // the feed group 'timeline:jessica'
-  followee: { type: String, required: true },  // target feed group i.e. 'user:eric'
+  follower: { type: String, required: true },  // user typed id, the feed group 'timeline:jessica'
+  followee: { type: String, required: true },  // target user typedid, feed group i.e. 'user:eric'
 };
 
 export default function model (app, name) {
