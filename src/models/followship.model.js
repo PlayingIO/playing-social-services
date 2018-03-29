@@ -8,6 +8,7 @@ const options = {
 const fields = {
   follower: { type: String, required: true },  // user typed id, the feed group 'timeline:jessica'
   followee: { type: String, required: true },  // target user typedid, feed group i.e. 'user:eric'
+  priority: { type: Number, default: 10 },     // priority [0-100], both active feeds get higher priority
 };
 
 export default function model (app, name) {
