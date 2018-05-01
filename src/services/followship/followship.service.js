@@ -14,7 +14,7 @@ const defaultOptions = {
 
 export class FollowshipService extends Service {
   constructor (options) {
-    options = Object.assign({}, defaultOptions, options);
+    options = fp.assign(defaultOptions, options);
     super(options);
   }
 
@@ -25,7 +25,7 @@ export class FollowshipService extends Service {
 }
 
 export default function init (app, options, hooks) {
-  options = Object.assign({ ModelName: 'followship' }, options);
+  options = fp.assign({ ModelName: 'followship' }, options);
   return createService(app, FollowshipService, FollowshipModel, options);
 }
 
