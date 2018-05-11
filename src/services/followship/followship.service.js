@@ -25,7 +25,7 @@ export class FollowshipService extends Service {
 }
 
 export default function init (app, options, hooks) {
-  options = fp.assign({ ModelName: 'followship' }, options);
+  options = { ModelName: 'followship', ...options };
   return createService(app, FollowshipService, FollowshipModel, options);
 }
 
