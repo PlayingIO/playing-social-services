@@ -1,7 +1,7 @@
 {
   "name": "playing-social-services",
   "version": "1.0.10",
-  "description": "Social relationship management microservices for playful applications",
+  "description": "Social relationship management microservices for building playful applications",
   "author": "Forafish",
   "license": "MIT",
   "main": "index.js",

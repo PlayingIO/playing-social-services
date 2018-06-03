@@ -1,7 +1,7 @@
 Playing Social Services
 =======================
 
-Social relationship management microservices for playful applications.
+Social relationship management microservices for building playful applications.
 
 # Usage
 
