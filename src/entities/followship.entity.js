@@ -2,6 +2,6 @@ import Entity from 'mostly-entity';
 
 const FollowshipEntity = new Entity('Followship');
 
-FollowshipEntity.excepts('_id');
+FollowshipEntity.discard('_id');
 
 export default FollowshipEntity.asImmutable();
