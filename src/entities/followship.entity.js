@@ -4,4 +4,4 @@ const FollowshipEntity = new Entity('Followship');
 
 FollowshipEntity.discard('_id');
 
-export default FollowshipEntity.asImmutable();
+export default FollowshipEntity.freeze();
