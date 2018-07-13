@@ -11,13 +11,12 @@ const fields = {
   priority: { type: Number, default: 10 },     // priority [0-100], both active feeds get higher priority
 };
 
-export default function model (app, name) {
+module.exports = function model (app, name) {
   const mongoose = app.get('mongoose');
   const schema = new mongoose.Schema(fields, options);
   schema.index({ follower: 1 });
   schema.index({ followee: 1 });
   schema.index({ follower: 1, followee: 1 }, { unique: true });
   return mongoose.model(name, schema);
-}
-
-model.schema = fields;
+};
+module.exports.schema = fields;

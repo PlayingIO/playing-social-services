@@ -1,10 +1,9 @@
-import assert from 'assert';
-import makeDebug from 'debug';
-import { Service, createService } from 'mostly-feathers-mongoose';
-import fp from 'mostly-func';
+const makeDebug = require('debug');
+const { Service, createService } = require('mostly-feathers-mongoose');
+const fp = require('mostly-func');
 
-import FollowshipModel from '../../models/followship.model';
-import defaultHooks from './followship.hooks';
+const FollowshipModel = require('../../models/followship.model');
+const defaultHooks = require('./followship.hooks');
 
 const debug = makeDebug('playing:social-services:followships');
 
@@ -12,7 +11,7 @@ const defaultOptions = {
   name: 'followships'
 };
 
-export class FollowshipService extends Service {
+class FollowshipService extends Service {
   constructor (options) {
     options = fp.assignAll(defaultOptions, options);
     super(options);
@@ -24,9 +23,8 @@ export class FollowshipService extends Service {
   }
 }
 
-export default function init (app, options, hooks) {
+module.exports = function init (app, options, hooks) {
   options = { ModelName: 'followship', ...options };
   return createService(app, FollowshipService, FollowshipModel, options);
-}
-
-init.Service = FollowshipService;
+};
+module.exports.Service = FollowshipService;

@@ -1,7 +1,7 @@
-import Entity from 'mostly-entity';
+const Entity = require('mostly-entity');
 
 const FollowshipEntity = new Entity('Followship');
 
 FollowshipEntity.discard('_id');
 
-export default FollowshipEntity.freeze();
+module.exports = FollowshipEntity.freeze();
